@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SocialScore.Views.PinPage"
+             BackgroundImageSource="White_Background">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#2196F3</Color>
+            <Color x:Key="Accent">#000000</Color>
+            <Color x:Key="LightTextColor">#999999</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView Margin="20">
+
+        <Grid Margin="20, 20, 20, 20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.0*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.3*" />
+                <RowDefinition Height="0.4*" />
+                <RowDefinition Height="0.3*" />
+            </Grid.RowDefinitions>
+
+            <Label HorizontalOptions="Center"
+               VerticalOptions="End"
+               Text="Welcome!"
+               FontSize="Large"
+               AutomationProperties.IsInAccessibleTree="true"
+               FontAttributes="Bold"/>
+
+            <StackLayout Grid.Row="1" x:Name ="NavigatableLayout" VerticalOptions="Center">
+
+                <Entry x:Name="entry_pin_code" 
+                   Placeholder="Write down your PIN code" 
+                   HorizontalOptions="Center" 
+                   HorizontalTextAlignment="Center"
+                   MaxLength="5"
+                   CursorPosition="0"
+                   TextChanged="OnPinEditorChanged"
+                   Completed="OnEnterPressed" />
+
+            </StackLayout>
+
+            <StackLayout Grid.Row="2" Orientation="Vertical" VerticalOptions="Center">
+                <Image Source="SocialScore_Logo.png" HeightRequest="35" />
+            </StackLayout>
+
+        </Grid>
+
+    </ScrollView>
+
+</ContentPage>
